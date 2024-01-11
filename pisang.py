@@ -1,0 +1,20 @@
+#deteksi tepi
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+image = cv2.imread("pisang.jpg")
+image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+canny_output = cv2.Canny(image, 80, 80)
+
+
+plt.subplot(131), plt.imshow(cv2.cvtColor (image, cv2.COLOR_BGR2RGB))
+plt.title("gambar asli"),plt.xticks([]),plt.yticks([])
+plt.subplot(132), plt.imshow(canny_output,cmap="gray")
+plt.title("gambar tepi"),plt.xticks([]),plt.yticks([])
+
+plt.show()
+
+
+
